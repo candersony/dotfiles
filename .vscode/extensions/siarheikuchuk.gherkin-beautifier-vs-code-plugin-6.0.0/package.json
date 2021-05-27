@@ -1,0 +1,153 @@
+{
+	"name": "gherkin-beautifier-vs-code-plugin",
+	"displayName": "Gherkin Beautifier",
+	"description": "Gherkin Beautifier is a multilingual VS Code Plugin for indentation of Gherkin/Cucumber .feature files",
+	"version": "6.0.0",
+	"publisher": "siarheikuchuk",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/drweb86/Gherkin-Beautifier-VS-Code-Plugin.git"
+	},
+	"bugs": "https://github.com/drweb86/Gherkin-Beautifier-VS-Code-Plugin/issues/",
+	"homepage": "https://github.com/drweb86/Gherkin-Beautifier-VS-Code-Plugin/blob/master/README.md",
+	"engines": {
+		"vscode": "^1.47.0"
+	},
+	"icon": "icon.png",
+	"galleryBanner.color": "#0D5CAB",
+	"keywords": [
+		"indent",
+		"tab",
+		"space",
+		"spacing"
+	],
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": [
+			{
+				"title": "Gherkin Beautifier",
+				"properties": {
+					"conf.view.indentSymbol": {
+						"type": "string",
+						"enum": [
+							"space",
+							"tab"
+						],
+						"default": "space",
+						"description": "What identation symbol to use"
+					},
+					"conf.view.identsBefore.Feature": {
+						"type": "number",
+						"default": "0",
+						"description": "How many identation symbols to insert before 'Feature'"
+					},
+					"conf.view.identsBefore.Rule": {
+						"type": "number",
+						"default": "4",
+						"description": "How many identation symbols to insert before 'Rule'"
+					},
+					"conf.view.identsBefore.Scenario": {
+						"type": "number",
+						"default": "8",
+						"description": "How many identation symbols to insert before 'Scneario'"
+					},
+					"conf.view.identsBefore.Examples": {
+						"type": "number",
+						"default": "8",
+						"description": "How many identation symbols to insert before 'Examples'"
+					},
+					"conf.view.identsBefore.Background": {
+						"type": "number",
+						"default": "8",
+						"description": "How many identation symbols to insert before 'Background'"
+					},
+					"conf.view.identsBefore.ScenarioOutline": {
+						"type": "number",
+						"default": "8",
+						"description": "How many identation symbols to insert before 'Scenario Outline'"
+					},
+					"conf.view.identsBefore.Given": {
+						"type": "number",
+						"default": "12",
+						"description": "How many identation symbols to insert before 'Given'"
+					},
+					"conf.view.identsBefore.When": {
+						"type": "number",
+						"default": "13",
+						"description": "How many identation symbols to insert before 'When'"
+					},
+					"conf.view.identsBefore.Then": {
+						"type": "number",
+						"default": "13",
+						"description": "How many identation symbols to insert before 'Then'"
+					},
+					"conf.view.identsBefore.And": {
+						"type": "number",
+						"default": "14",
+						"description": "How many identation symbols to insert before 'And'"
+					},
+					"conf.view.identsBefore.But": {
+						"type": "number",
+						"default": "14",
+						"description": "How many identation symbols to insert before 'But'"
+					},
+					"conf.view.identsBefore.Tag": {
+						"type": "string",
+						"default": "relative",
+						"description": "How many identation symbols to insert before @ tags. Allowed values: amount of indentation chars or 'relative'"
+					},
+					"conf.view.identsBefore.Table": {
+						"type": "number",
+						"default": "18",
+						"description": "How many identation symbols to insert before table '|'"
+					},
+					"conf.view.table.autoformat": {
+						"type": "boolean",
+						"default": true,
+						"description": "Enables table autoformatting"
+					},
+					"conf.view.validate.tags": {
+						"type": "string",
+						"default": "",
+						"description": "Validates if all tags are from allowed tags list and show warning messages upon saving feature files. How to specify tags? Example 1: @debug @important-component. Example 2: @debug, @important-component"
+					},
+					"conf.view.validate.tagsFile": {
+						"type": "string",
+						"default": "",
+						"description": "Validates if all tags are from allowed tags list and show warning messages upon saving feature files. List of tags is specified by file. In a file tags should go one per line. Path to file is resolved relative to workspace folder"
+					},
+					"gherkin-beautifier.validate.complainIfThenTextDontHaveThisWord": {
+						"type": "string",
+						"default": "",
+						"description": "Validates if phrase in 'then' part of script contains the specified keyword (for example 'should', like Then Apple should be eaten). If word is missing, a warning will be shown, but script will be saved"
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./ --resolveJsonModule",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -watch -p ./ --resolveJsonModule"
+	},
+	"devDependencies": {
+		"@types/node": "^12.12.50",
+		"@types/vscode": "^1.47.0",
+		"@typescript-eslint/eslint-plugin": "^3.7.0",
+		"@typescript-eslint/parser": "^3.7.0",
+		"eslint": "^7.5.0",
+		"typescript": "^3.9.7"
+	},
+	"__metadata": {
+		"id": "0ae06e99-5c99-4e4d-927a-50846220ef4a",
+		"publisherId": "e13937b6-1077-4739-98ab-5c835ed07606",
+		"publisherDisplayName": "Siarhei Kuchuk"
+	}
+}

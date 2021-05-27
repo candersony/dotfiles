@@ -1,0 +1,10 @@
+name: "bearded-theme"
+lint: {
+	globals: []
+	ignore: [
+		"launch.json"
+		"package-lock.json"
+		"themes"
+]
+}
+root: true
